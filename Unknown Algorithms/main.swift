@@ -9,3 +9,6 @@ import Foundation
 
 print("Hello, World!")
 
+let algorithms = UnknownAlgorithms()
+
+print(algorithms.findSecondSmallest([9,4,5,3,7,4]))

@@ -57,4 +57,6 @@ class UnknownAlgorithmsUnitTestFile: XCTestCase {
             let _ = algorithms.findMode(testArray)
         }
     }
+    
+    func 
 }

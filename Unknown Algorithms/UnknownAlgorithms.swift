@@ -34,4 +34,19 @@ class UnknownAlgorithms {
             return 0
         }
     }
+    
+    private func findSmallestIndex(_ array: [Int]) -> Int {
+        var smallestIndex = 0
+        for i in 1..<array.count {
+            if array[smallestIndex] > array[i] {
+                smallestIndex = i
+            }
+        }
+        return smallestIndex
+    }
+    
+    func findSecondSmallest(_ array: [Int]) -> Int {
+        findSmallestIndex(array)
+        
+    }
 }
