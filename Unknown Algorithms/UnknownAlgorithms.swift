@@ -19,14 +19,19 @@ class UnknownAlgorithms {
     }
     
     func findMode(_ array: [Int]) -> Int {
-        var amountSame = 1
+        var amountOfEachInteger: [Int: Int] = [:]
         for i in 1..<array.count {
-            if array[i] == array[i - 1] {
-                amountSame += 1
-                
-            } else {
-                amountSame = 1
+            if amountOfEachInteger[array[i]] == nil {
+                amountOfEachInteger[array[i]] = 1
             }
+            if array[i] == array[i - 1] {
+                amountOfEachInteger[array[i]] = amountOfEachInteger[array[i]]! + 1
+            }
+        }
+        if let maximum = (amountOfEachInteger.max { a,b in a.value < b.value }) {
+            return maximum.key
+        } else {
+            return 0
         }
     }
 }

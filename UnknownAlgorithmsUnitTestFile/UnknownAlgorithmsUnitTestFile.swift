@@ -24,18 +24,37 @@ class UnknownAlgorithmsUnitTestFile: XCTestCase {
         }
     }
     
+    func testFirstAndLastPerformance() {
+        //arrange
+        let algorithms = UnknownAlgorithms()
+        let testArray = [2,5,3,1,7]
+        //act
+        measure {
+            let _ = algorithms.firstAndLast(testArray)
+        }
+    }
+    
     func testFindModeReturnsModeOfSortedIntegerArray() {
         //arrange
         let algorithms = UnknownAlgorithms()
         let testCases = [([1,1,2,2,2,3,4,5,6], 2),
                          ([1,1,1,1,4,6], 1),
-                         ([0,1,2,3,4], 4),
                          ([1,2,3,4,4,55], 4)]
         //act
         for testCase in testCases {
             let actual = algorithms.findMode(testCase.0)
             //assert
             XCTAssertEqual(actual, testCase.1)
+        }
+    }
+    
+    func testFindModePerformance() {
+        //arrange
+        let algorithms = UnknownAlgorithms()
+        let testArray = [11,12,13,14,15,15]
+        //act
+        measure {
+            let _ = algorithms.findMode(testArray)
         }
     }
 }
