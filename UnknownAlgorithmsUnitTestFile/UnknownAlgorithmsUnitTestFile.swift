@@ -58,5 +58,18 @@ class UnknownAlgorithmsUnitTestFile: XCTestCase {
         }
     }
     
-    func 
+    func testFindSecondSmallestFindsTheSecondSmallest() {
+        //arrange
+        let algorithms = UnknownAlgorithms()
+        let testCases = [([3,5,1,2,7], 2),
+                         ([7,4,12,13,4], 4),
+                         ([77,12,44,101], 44),
+                         ([1,3,6,2], 2)]
+        //act
+        for testCase in testCases {
+            let actual = algorithms.findSecondSmallest(testCase.0)
+            //assert
+            XCTAssertEqual(actual, testCase.1)
+        }
+    }
 }

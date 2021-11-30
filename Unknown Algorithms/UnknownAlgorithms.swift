@@ -46,7 +46,14 @@ class UnknownAlgorithms {
     }
     
     func findSecondSmallest(_ array: [Int]) -> Int {
-        findSmallestIndex(array)
-        
+        var secondArray = array
+        let smallestIndex = findSmallestIndex(array)
+        secondArray.remove(at: smallestIndex)
+        let secondSmallestIndex = findSmallestIndex(secondArray)
+        if secondSmallestIndex < smallestIndex {
+            return array[secondSmallestIndex]
+        } else {
+            return array[secondSmallestIndex + 1]
+        }
     }
 }
